@@ -2,17 +2,17 @@ name: Validar HTML con W3C
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  validate-html:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout Repo
-      uses: actions/checkout@v2
+  build:
 
-    - name: Validar HTML con W3C
-      uses: validator/validator@v1
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Validar HTML
+      uses: validator/validator@v20.6.30
       with:
         files: '*.html'
