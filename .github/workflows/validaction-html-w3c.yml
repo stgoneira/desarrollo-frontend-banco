@@ -1,18 +1,18 @@
 name: Validar HTML con W3C
+
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-  build:
+  validate-html:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
+    - name: Checkout Repo
+      uses: actions/checkout@v2
 
-      - name: Validar HTML con W3C
-        uses: w3c/validate-action@v1
-        with:
-          root: .
-          level: error
-          validator: "https://validator.w3.org/nu/"
+    - name: Validar HTML con W3C
+      uses: falnyr/W3C-Validator@v1.0.0
+      with:
+        targets: '*.html'
