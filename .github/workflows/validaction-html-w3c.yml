@@ -1,4 +1,25 @@
-- name: Validar HTML con W3C
-  uses: jakejarvis/w3c-html-validation-action@v2.0.0
-  with:
-    files: banco.html inversiones.html
+name: Validar HTML con W3C
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Validar HTML con W3C
+        uses: mrlesmithjr/w3c-validator-action@v1.0.1
+        with:
+          html_dir: ./
+
