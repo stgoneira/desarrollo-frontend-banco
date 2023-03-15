@@ -1,8 +1,0 @@
-{
-  "name": "my-repo",
-  "version": "0.1.0",
-  "dependencies": {
-    "html-validator": "^6.3.3"
-  }
-}
-
