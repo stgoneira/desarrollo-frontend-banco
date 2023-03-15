@@ -1,0 +1,4 @@
+- name: Validar HTML con W3C
+  uses: jakejarvis/w3c-html-validation-action@v2.0.0
+  with:
+    files: banco.html inversiones.html
