@@ -7,3 +7,7 @@ Además, se trabajará en la creación de dos simuladores: el primero, un simula
 ## Guía Estilo
 
 ![Guía de Estilo](./assets/diseno-banco.png)
+
+## Inspiración 
+
+https://alister-bank.cmsmasters.net/ 
