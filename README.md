@@ -1,6 +1,12 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+
+<style>
+    .titulo, .parrafo {
+        font-family: 'Open Sans', sans-serif;
+    }
+    .titulo {font-weight: 300;}
+    .parrafo {font-weight: normal;}
+</style>
 
 # Proyecto Banco
 
@@ -12,8 +18,8 @@ Además, se trabajará en la creación de dos simuladores: el primero, un simula
 
 ![Guía de Estilo](./assets/diseno-banco.png)
 
-<p style="font-family: 'Roboto', sans-serif; font-weigh: 300;">Título (Roboto 300)</p>
-<p style="font-family: 'Roboto', sans-serif; font-weight: normal;">Párrafo normal (Roboto normal)</p>
+<p class="titulo">Título (Roboto 300)</p>
+<p class="parrafo">Párrafo normal (Roboto normal)</p>
 
 ## Inspiración 
 
