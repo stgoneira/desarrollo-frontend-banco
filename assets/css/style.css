@@ -29,6 +29,7 @@ a {
 /* GLOBAL CLASSES */
 .icon svg {
     height: 1em;
+    width: auto;
 }
 
 /* -- HEADER 1 */
@@ -134,10 +135,14 @@ footer.main ul {
     gap: 0.8em;
 }
 footer.main li {
-    list-style: none;
+    list-style: none;    
 }
-footer.main a {
+footer.main a {    
+    display: flex;
+    gap: 0.5em;
     color: white;
+    fill: white;
+    stroke: white;
     text-decoration: none;
 }
 /* END -- FOOTER MAIN */
