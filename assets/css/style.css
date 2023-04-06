@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+:root {
+    --primary-color: #fbb03b;
+    --secaondary-color: #8c52ff;
+    --window-padding: 10em;
+}
+
+/* RESET */
+body, header, ul, li {margin: 0; padding: 0;}
+
+/* STYLES */
+body {
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+header img {
+    height: 10vh;    
+}
+header {
+    position: fixed; /* sticky */
+    width: 100%; /* for sticky */
+    background-color: var(--primary-color);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;    
+}
+header > nav:nth-child(1) {
+    flex-basis: 100%; 
+    background: black;
+    display: flex; 
+    justify-content: space-between;
+    padding: 0.4em 0;    
+}
+header > nav:nth-child(1) ul {
+    display: flex;
+    list-style: none;
+    gap: 1em;
+}
+header > nav:nth-child(1) a img {
+    fill: white;
+}
+header > nav:nth-child(1) a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 300;
+}
+header > nav:nth-child(3) {
+    display: flex;
+    gap: 1em;
+}
+header > nav:nth-child(3) a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: normal;    
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 0.4em 2em;
+}
+@media screen and (min-width: 768px) {
+    header > nav:nth-child(1) {
+        padding-left: var(--window-padding);
+        padding-right: var(--window-padding);
+    }
+    header img {
+        margin-left: var(--window-padding);
+    }    
+    header > nav:nth-child(3) {
+        padding: 0 var(--window-padding);
+    }
+}
+.icon {
+    display: inline-flex;    
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+.icon svg {    
+    width: 1em;
+    height: auto;
+    fill: white;
+}
+main {
+    padding-top: 50vh;
+}
+
