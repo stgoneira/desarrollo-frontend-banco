@@ -246,6 +246,8 @@ h2.productos span {
     padding: 1.0em 2em;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    min-height: 290px;
     box-shadow: 3px 7px 8px rgba(0,0,0,0.4);
     background-repeat: no-repeat;
 }
@@ -262,6 +264,12 @@ h2.productos span {
     margin: 0;
     font-weight: 300;
     color: #444;    
+}
+#productos article a {    
+    font-weight: 400;
+    padding-top: 2em;
+    color: var(--primary-color);
+    align-self: flex-end;
 }
 #productos article.hipotecario {
     background-image: url(../img/productos/hipotecario.png);
