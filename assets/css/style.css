@@ -5,7 +5,13 @@
     --primary-color: #dd852f;
     /* --secondary-color: #8c52ff; */
     --secondary-color: #3c00b3;
-    --window-padding: 10em;
+    --window-padding: 1em;
+    
+}
+@media screen and (min-width: 768px) {        
+    :root {
+        --window-padding: 10em;
+    }
 }
 
 /* RESET */
@@ -13,13 +19,16 @@ body, header, ul, li {margin: 0; padding: 0;}
 
 /* STYLES */
 body {
-    min-height: 200vh;
+    min-height: 100vh;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
     font-size: 16px;
 }
+
+/* -- HEADER */
 header img {
-    height: 8vh;    
+    height: 8vh;
+    margin-left: var(--window-padding);
 }
 header {
     position: fixed; /* sticky */
@@ -28,14 +37,17 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;    
+    align-items: center;
+    align-items: center;        
 }
 header > nav:nth-child(1) {
     flex-basis: 100%; 
     background: black;
     display: flex; 
     justify-content: space-between;
-    padding: 0.4em 0;    
+    padding: 0.4em 0;
+    padding-left: var(--window-padding);
+    padding-right: var(--window-padding);
 }
 header > nav:nth-child(1) ul {
     display: flex;
@@ -53,6 +65,7 @@ header > nav:nth-child(1) a {
     font-weight: 300;
 }
 header > nav:nth-child(3) {
+    padding-right: var(--window-padding);    
     display: flex;
     gap: 1em;
 }
@@ -69,19 +82,8 @@ header > nav:nth-child(3) a:hover {
     background-color: var(--secondary-color);    
     font-weight: 500;
 }
+/* END -- HEADER */
 
-@media screen and (min-width: 768px) {
-    header > nav:nth-child(1) {
-        padding-left: var(--window-padding);
-        padding-right: var(--window-padding);
-    }
-    header img {
-        margin-left: var(--window-padding);
-    }    
-    header > nav:nth-child(3) {
-        padding: 0 var(--window-padding);
-    }
-}
 .icon {
     display: inline-flex;    
     justify-content: center;
@@ -113,3 +115,60 @@ main {
     padding-top: 50vh;
 }
 
+/* -- FOOTER */
+footer.main {
+    background-color: rgb(62, 69, 81);
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: space-between;
+    padding: 1.5em 0 3em;
+    border-top: 5px solid var(--primary-color);
+}
+footer.main > section:nth-child(1) {
+    margin-left: var(--window-padding);       
+}
+footer.main > section:last-child {
+    margin-right: var(--window-padding);       
+}
+footer.main h3 {
+    font-weight: 300;
+}
+footer.main ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+}
+footer.main li {
+    list-style: none;
+}
+footer a {
+    color: white;
+    text-decoration: none;
+}
+footer.garantia {
+    background: #323741;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+    padding: 1.2em 0 1.5em;
+}
+footer.garantia > img {
+    height: 3em;
+    margin-left: var(--window-padding);
+}
+footer.garantia > section {    
+    margin-right: var(--window-padding);    
+}
+footer.garantia > section p:nth-child(1) {
+    font-weight: 300;
+    margin-bottom: 0.3em;
+}
+footer.garantia > section p {
+    font-size: 0.8em;
+    margin: 0;
+    padding: 0;
+}
+/* END -- FOOTER */
