@@ -92,6 +92,7 @@ a {
 }
 #header-2 nav a {
     display: flex;
+    align-items: center;
     gap: 0.5em;
     color: white;
     text-decoration: none;
