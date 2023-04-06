@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500&display=swap');
 
 :root {    
     --primary-color: #dd852f;
@@ -198,5 +198,70 @@ footer.garantia > section p {
 /* END -- FOOTER GARANTIA */
 
 /* -- MAIN */
+main {
+    padding: 3rem var(--window-padding);
+}
+/* -- MAIN -- DESCUENTO */
+section#descuentos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section#descuentos h1 {
+    font-weight: 300;
+    font-size: 2rem;
+    padding: 0 0;
+    margin: 0 0;
+}
+section#descuentos h1 strong {
+    font-weight: 500;
+    color: var(--primary-color)
+}
+section#descuentos h2 {
+    padding: 0 0;
+    margin: 1em 0;
+}
+section#descuentos img {
+    width: 500px;    
+    height: auto;
+}
+/* END -- MAIN -- DESCUENTO */
+/* -- MAIN -- PRODUCTOS */
+h2.productos {
+    text-align: center;
+    margin: 1.5em 0 3em;
+}
+h2.productos span {
+    border-bottom: 2px solid var(--primary-color);
+    padding: 0.4em 1em;
+}
+#productos {
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+#productos article {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 7px 8px rgba(0,0,0,0.4)
+}
+#productos article h3,
+#productos article p {
+    text-align: center;
+}
+#productos article h3 {
+    font-weight: 500;
+    margin: 0.5em 0 1em;
+    color: #333;
+}
+#productos article p {    
+    margin: 0;
+    font-weight: 300;
+    color: #444;
+}
 
+/* END -- MAIN -- PRODUCTOS */
 /* -- END MAIN */
