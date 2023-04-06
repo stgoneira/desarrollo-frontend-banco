@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
 
 :root {
-    --primary-color: #fbb03b;
-    --secaondary-color: #8c52ff;
+    /* --primary-color: #fbb03b; */
+    --primary-color: #dd852f;
+    /* --secondary-color: #8c52ff; */
+    --secondary-color: #3c00b3;
     --window-padding: 10em;
 }
 
@@ -13,6 +15,7 @@ body, header, ul, li {margin: 0; padding: 0;}
 body {
     min-height: 200vh;
     font-family: 'Roboto', sans-serif;
+    font-weight: 100;
     font-size: 16px;
 }
 header img {
@@ -62,6 +65,11 @@ header > nav:nth-child(3) a {
     border-radius: 10px;
     padding: 0.4em 2em;
 }
+header > nav:nth-child(3) a:hover {
+    background-color: var(--secondary-color);    
+    font-weight: 500;
+}
+
 @media screen and (min-width: 768px) {
     header > nav:nth-child(1) {
         padding-left: var(--window-padding);
