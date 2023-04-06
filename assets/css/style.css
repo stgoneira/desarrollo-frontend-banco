@@ -11,12 +11,12 @@ body, header, ul, li {margin: 0; padding: 0;}
 
 /* STYLES */
 body {
-    min-height: 100vh;
+    min-height: 200vh;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
 }
 header img {
-    height: 10vh;    
+    height: 8vh;    
 }
 header {
     position: fixed; /* sticky */
@@ -44,8 +44,9 @@ header > nav:nth-child(1) a img {
 }
 header > nav:nth-child(1) a {
     color: white;
+    text-transform: uppercase;
     text-decoration: none;
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-weight: 300;
 }
 header > nav:nth-child(3) {
@@ -83,6 +84,22 @@ header > nav:nth-child(3) a {
     width: 1em;
     height: auto;
     fill: white;
+}
+.slide {
+    display: flex;
+    justify-content: center;
+    background-image: url(../img/shape-1.png), url(../img/colegas.jpg); 
+    background-repeat: no-repeat;
+    background-size: 500px, cover;
+    background-position: right top;
+    min-height: 70vh; 
+    background-color: rgba(0, 0, 0, 0.95);
+    background-blend-mode: normal, luminosity;
+
+}
+.slide img {
+    max-width: 2400px;
+    max-height: 70vh;
 }
 main {
     padding-top: 50vh;
