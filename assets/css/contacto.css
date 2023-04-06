@@ -1,3 +1,10 @@
+input.error {
+    background-color: red;
+    color: white;
+}
+span.error {
+    color: red;    
+}
 main {    
     padding: 8rem var(--window-padding) 5rem;
 }
@@ -9,6 +16,9 @@ form fieldset {
 form input {
     height: 1.7em;
     border-radius: 10px;
+}
+form span {
+    font-weight: 300;
 }
 form fieldset legend {
     font-weight: 500;
