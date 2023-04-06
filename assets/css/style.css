@@ -14,7 +14,13 @@
 }
 @media screen and (max-width: 768px) {        
     section.slide {
-        background-position-x: -100px;
+        background-position-x: right, -100px;        
+        background-position-y: bottom, bottom;
+        background-size: 80%, auto;
+    }
+    #header-1 a span,
+    #header-2 a span {
+        display: none;
     }
 }
 
@@ -190,3 +196,7 @@ footer.garantia > section p {
     padding: 0;
 }
 /* END -- FOOTER GARANTIA */
+
+/* -- MAIN */
+
+/* -- END MAIN */
