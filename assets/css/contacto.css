@@ -1,0 +1,23 @@
+main {    
+    padding: 8rem var(--window-padding) 5rem;
+}
+form fieldset {
+    padding: 1em 2em;
+    margin-bottom: 2em;
+    width: 50%;
+}
+form input {
+    height: 1.7em;
+    border-radius: 10px;
+}
+form fieldset legend {
+    font-weight: 500;
+}
+form fieldset div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+form fieldset div label {
+    font-weight: 300;
+}

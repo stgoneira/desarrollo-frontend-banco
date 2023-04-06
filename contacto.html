@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/contacto.css" />
+    <title>Data Bank | Contacta con nosotros</title>
+</head>
+<body>    
+    <header id="header-1">
+        <nav>            
+            <a href="#">Personas</a>
+            <a href="#">Empresas</a>
+        </nav>
+
+        <nav>
+            <a href="#" class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+                <span>Sucursales</span>
+            </a>
+            <a href="#" class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+                <span>Contáctanos</span>
+            </a>
+        </nav>
+    </header>    
+    <header id="header-2">
+        <a href="#">
+            <picture>
+                <source srcset="assets/img/isotipo.svg"
+                        media="(max-width: 768px)" />
+                <img src="assets/img/logotipo.svg" alt="Logo Data Bank" />
+            </picture>            
+        </a>
+        <nav>
+            <a href="#" class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M64 32C28.7 32 0 60.7 0 96v32H576V96c0-35.3-28.7-64-64-64H64zM576 224H0V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V224zM112 352h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm112 16c0-8.8 7.2-16 16-16H368c8.8 0 16 7.2 16 16s-7.2 16-16 16H240c-8.8 0-16-7.2-16-16z"/></svg>
+                <span>Abre tu cuenta</span>
+            </a>
+            <a href="#" class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+                <span>Ingresar</span>
+            </a>
+            <a href="#" class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+                <span>Menú</span>
+            </a>
+        </nav>
+    </header>
+    <!-- ###################################### -->    
+    
+    <main>
+        <h1>Contacta a un Ejecutivo de Data Bank</h1>
+
+        <form action="contacto.html">
+            <fieldset>
+                <legend>Datos Personales</legend>
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" />
+                    <span></span>
+                </div>
+                <div>
+                    <label for="rut">RUT</label>
+                    <input type="text" id="rut" name="rut" />
+                    <span></span>
+                </div>
+                <div>
+                    <label for="rut">Teléfono</label>
+                    <input type="text" id="telefono" name="telefono" />
+                    <span></span>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Ubicación</legend>
+                <div>
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" name="direccion" />
+                    <span></span>
+                </div>
+                <div>
+                    <label for="comuna">Comuna</label>                    
+                    <select name="comuna" id="comuna">
+                        <option value="">-- Por favor escoja una opción--</option>
+                        <option value="santiago">Santiago</option>
+                        <option value="providencia">Providencia</option>
+                        <option value="la-florida">La Florida</option>
+                        <option value="las-condes">Las Condes</option>
+                        <option value="vitacura">Vitacura</option>
+                    </select>
+                    <span></span>
+                </div>
+            </fieldset>
+            <div class="botones">
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpiar</button>
+            </div>
+        </form>
+    </main>
+
+    <!-- ###################################### -->    
+    <footer class="main">
+        <section>
+            <h3>Portales</h3>
+            <ul>
+                <li><a href="#">Personas</a></li>
+                <li><a href="#">Empresas</a></li>
+                <li><a href="#">PYMES</a></li>
+                <li><a href="#">Universidades</a></li>
+                <li><a href="#">Accionistas</a></li>
+                <li><a href="#">Corredores de Bolsa</a></li>
+            </ul>
+        </section>
+        <section>
+            <h3>Nuestros Productos</h3>
+            <ul>
+                <li><a href="#">Tarjetas de Cŕedito</a></li>
+                <li><a href="#">Cuentas Corrientes</a></li>
+                <li><a href="#">Seguros</a></li>
+                <li><a href="#">Créditos de Consumo</a></li>
+                <li><a href="#">Créditos Hipotecarios</a></li>
+                <li><a href="#">Inversiones</a></li>
+            </ul>
+        </section>
+        <section>
+            <h3>Informáte</h3>
+            <ul>
+                <li><a href="#">Tarifas y Comisiones</a></li>
+                <li><a href="#">Estados Financieros</a></li>
+                <li><a href="#">Información Corporativa</a></li>
+                <li><a href="#">Resultados de Concurso</a></li>
+                <li><a href="#">Estudios</a></li>
+                <li><a href="#">SERNAC</a></li>
+            </ul>
+        </section>
+        <section>
+            <h3>Encuéntranos</h3>
+            <ul>
+                <li><a href="#">Sucursales</a></li>
+                <li><a href="#">Contáctanos</a></li>
+                <li><a href="#">Cajeros Automáticos</a></li>
+                <li><a href="#" class="icon">
+                        <svg width="854.54" height="854.54" version="1.1" viewBox="0 0 854.54 854.54" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m352.03 215.82c-6.6866-16.152-24.315-24.749-41.162-20.147l-76.418 20.841c-15.11 4.1683-25.617 17.889-25.617 33.52 0 214.84 174.2 389.04 389.04 389.04 15.631 0 29.352-10.508 33.52-25.617l20.841-76.418c4.6025-16.847-3.9946-34.475-20.147-41.162l-83.365-34.736c-14.155-5.905-30.567-1.8236-40.206 10.073l-35.083 42.812c-61.135-28.917-110.63-78.416-139.55-139.55l42.812-34.996c11.897-9.726 15.978-26.052 10.073-40.206l-34.736-83.365z" stroke-width=".86839"/>
+                            <circle cx="427.27" cy="427.27" r="410.1" fill="none" stroke-width="34.339"/>
+                       </svg>
+                        <span>600 600 6000</span>
+                </a></li>
+            </ul>
+        </section>
+    </footer>
+    <footer class="garantia">
+        <img src="assets/img/isotipo.svg" alt="Logo Data Bank" />
+        <section>
+            <p>
+                Mesa central: 22692 7000, Av. El Golf 125, Las Condes, Santiago. Notificaciones Legales: Huérfanos 1102, piso 4°, Santiago centro, Santiago.
+            </p>
+            <p>
+                Infórmese sobre la garantía estatal de los depósitos en su banco o en www.cmfchile.cl                
+            </p>
+            <p>
+                Infórmese sobre las entidades autorizadas para emitir tarjetas de pago en el país, quienes se encuentran inscritas en los Registros de Emisores de Tarjetas en www.cmfchile.cl
+            </p>
+        </section>
+    </footer>
+</body>
+</html>
