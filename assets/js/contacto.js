@@ -46,24 +46,6 @@ function valida(valor, elementoForm, elementoMsje, fnValidacion) {
     }
 }
 
-document.querySelector('form').addEventListener('submit', (submitEvent) => {
-    submitEvent.preventDefault();
-    validaNombre();    
-    validaRut();    
-    validaTelefono();
-    /*
-    validaDireccion();
-    */
-    validaComuna();
-    
-   const errores = document.querySelectorAll("span.error").length;
-   if(errores > 0) {
-     document.querySelector("form > p").textContent = `Hay ${errores} error(es) por resolver.`;
-   } else {
-     document.querySelector("form > p").textContent = "Procesando...";
-   }
-});
-
 const nombreInputElement = document.querySelector("#nombre");
 const nombreSpanElement  = document.querySelector("#nombre + span");
 nombreInputElement.addEventListener('input', (evento) => {
@@ -145,3 +127,46 @@ const validaComuna = () => {
         return true;
     });
 };
+/* --------------------------------- */
+document.querySelector('form').addEventListener('submit', async (submitEvent) => {
+    submitEvent.preventDefault();
+    validaNombre();    
+    validaRut();    
+    validaTelefono();    
+    validaDireccion();    
+    validaComuna();
+    
+   const errores = document.querySelectorAll("span.error").length;
+   if(errores > 0) {
+     document.querySelector("form > p").textContent = `Hay ${errores} error(es) por resolver.`;
+   } else {
+     document.querySelector("form > p").textContent = "Procesando...";
+   }
+
+   const nombre     = nombreInputElement.value;
+   const rut        = rutInputElement.value;
+   const telefono   = telefonoInputElement.value;
+
+   const contacto = {
+    nombre,
+    rut,
+    telefono
+   };
+   console.dir(contacto);
+
+   const baseUrl    = 'http://localhost:3000';
+   const url        = baseUrl + '/contacto';
+   
+   try {
+    const respuesta = await fetch(url, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(contacto)
+    }); 
+    const datos = await respuesta.json();
+    console.log("Contacto guardado, actualizar mensaje form ....");
+   } catch (error) {
+    console.error(error.message);
+   }
+   
+});
