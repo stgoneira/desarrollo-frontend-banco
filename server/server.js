@@ -4,12 +4,13 @@ fastify.register(require('@fastify/cors'), {});
 fastify.get('/', async (request, reply) => {
   return { api: 'Proyecto Frontend Banco 2023' };
 });
-
+/* CONTACTO */
 fastify.route({
     method: ['GET', 'POST', 'PUT', 'DELETE'],
     url: '/contacto',
     handler: require('./src/contacto')
 });
+fastify.get('/contacto/:id', require('./src/contacto-id'));
 
 // Run the server!
 const start = async () => {
