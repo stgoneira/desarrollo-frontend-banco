@@ -4,16 +4,15 @@ var Errores = {
     telefono: {valido: false, mensaje: ""}
 };
 
-
 var Rut = {
 	// Valida el rut con su cadena completa "XXXXXXXX-X"
 	validaRut : function (rutCompleto) {
 		rutCompleto = rutCompleto.replaceAll(".","");
 		if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test( rutCompleto ))
-			return false;
+			return false;        
 		var tmp 	= rutCompleto.split('-');
 		var digv	= tmp[1]; 
-		var rut 	= tmp[0];
+		var rut 	= tmp[0];                
 		if ( digv == 'K' ) digv = 'k' ;
 		
 		return (Rut.dv(rut) == digv );
@@ -26,115 +25,95 @@ var Rut = {
 	}
 }
 
-const iRut = document.querySelector("input#rut");
-const mRut = document.querySelector("input#rut + span");
-iRut.addEventListener('blur', (e) => {
-    const rut = iRut.value;
-    if( !Rut.validaRut(rut) ) {
-        mRut.textContent = "RUT inválido!";
-        mRut.classList.add("error");
-        iRut.classList.add("error");
-    } else {
-        iRut.classList.remove("error");
-        mRut.classList.remove("error");
-        mRut.textContent = "";
+/**
+ * 
+ * @param {*} valor 
+ * @param {HTMLFormElement} elementoForm 
+ * @param {HTMLElement} elementoMsje 
+ * @param {Function} fnValidacion - función que retorna true si es válido y false en caso contrario 
+ */
+function valida(valor, elementoForm, elementoMsje, fnValidacion) {
+    try {
+        fnValidacion(valor);
+        elementoForm.classList.remove("error");
+        elementoMsje.classList.remove("error");
+        elementoMsje.textContent = "";
+        return false;
+    } catch (error) {
+        elementoForm.classList.add("error");
+        elementoMsje.classList.add("error");
+        elementoMsje.textContent = error.message;
     }
-});
-/*
-const iNombre = document.querySelector("input#nombre");
-const mNombre = document.querySelector("input#nombre + span");
-iNombre.addEventListener('blur', (e) => {
-    if( iNombre.value.length < 3 ) {
-        mNombre.textContent = "Nombre muy corto";
-        mNombre.classList.add("error");
-        iNombre.classList.add("error");
-    } else {
-        iNombre.classList.remove("error");
-        mNombre.classList.remove("error");
-        mNombre.textContent = "";
-    }
-});
-*/
+}
 
-// fnValidacion(vInput)
-// fnValidación -> devuelve true cuando el valor es válido 
-// fnValidación -> retorna un array [boolean, "mensaje..."]
-function validaCampo(vInput, vSpan, fnValidacion) {
-    vInput.addEventListener('blur', e => {
-        const resultado = fnValidacion(vInput);
-        if( ! resultado[0] ) {
-            vSpan.textContent = resultado[1];
-            vSpan.classList.add("error");
-            vInput.classList.add("error");
-        } else {
-            vSpan.textContent = "";
-            vSpan.classList.remove("error");
-            vInput.classList.remove("error");
+document.querySelector('form').addEventListener('submit', (submitEvent) => {
+    submitEvent.preventDefault();
+    validaNombre();    
+    validaRut();    
+    validaTelefono();
+    /*
+    validaDireccion();
+    validaComuna();
+    */
+   const errores = document.querySelectorAll("span.error").length;
+   if(errores > 0) {
+     document.querySelector("form > p").textContent = `Hay ${errores} error(es) por resolver.`;
+   } else {
+     document.querySelector("form > p").textContent = "Procesando...";
+   }
+});
+
+const nombreInputElement = document.querySelector("#nombre");
+const nombreSpanElement  = document.querySelector("#nombre + span");
+nombreInputElement.addEventListener('input', (evento) => {
+    validaNombre();
+});
+const validaNombre = () => {    
+    valida(nombreInputElement.value, nombreInputElement, nombreSpanElement, (valor) => {
+        if(valor.length < 3) {
+            throw new Error("Nombre demasiado corto");
         }
+        return true;
     });
 }
 
-validaCampo(
-    document.querySelector("#nombre"),
-    document.querySelector("#nombre + span"),
-    (vInput) => {        
-        const textoInput = vInput.value;        
-        if(textoInput.length < 3) {
-            return [false, 'Nombre muy corto'];
-        } else {
-            return [true, ''];
+/* --------------------------------- */
+const rutInputElement = document.querySelector("#rut");
+const rutSpanElement  = document.querySelector("#rut + span");
+rutInputElement.addEventListener('input', (evento) => {
+    validaRut();
+});
+const validaRut = () => {    
+    valida(rutInputElement.value, rutInputElement, rutSpanElement, (valor) => {
+        const rutLimpio = valor.replaceAll('.', '');
+
+        if(rutLimpio.length < 8) {
+            throw new Error("RUT demasiado corto");
         }
-    }
-);
 
-// template string
-const email = `
-Querido ${usuario.nombre},
+        if( !Rut.validaRut(rutLimpio) ) {
+            throw new Error("RUT no válido!");
+        }
+        return true;
+    });
+}
 
-Lorem ipsum es de .... ${usuario.email} ....
-`;
-
-const fnValidacionTelefono = (vInput) => {        
-    const textoInput = vInput.value;        
-    if(textoInput.length < 3) {
-        return [false, 'Telefono muy corto'];
-    } else {
-        return [true, ''];
-    }
-};
-
-validaCampo(
-    document.querySelector("#telefono"),
-    document.querySelector("#telefono + span"),
-    fnValidacionTelefono
-);
-
-/*
-const iTelefono = document.querySelector("input#telefono");
-const mTelefono = document.querySelector("input#telefono + span");
-iTelefono.addEventListener('blur', (e) => {
-    if( iTelefono.value.length < 3 ) {
-        mTelefono.textContent = "Telefono muy corto";
-        mTelefono.classList.add("error");
-        iTelefono.classList.add("error");
-    } else {
-        iTelefono.classList.remove("error");
-        mTelefono.classList.remove("error");
-        mTelefono.textContent = "";
-    }
+/* --------------------------------- */
+const telefonoInputElement = document.querySelector("#telefono");
+const telefonoSpanElement  = document.querySelector("#telefono + span");
+telefonoInputElement.addEventListener('input', (evento) => {
+    validaTelefono();
 });
-*/
+const validaTelefono = () => {    
+    valida(telefonoInputElement.value, telefonoInputElement, telefonoSpanElement, (valor) => {
+        if(valor.length != 9) {
+            throw new Error("El teléfono debe ser de 9 dígitos");
+        }
 
-const sComuna = document.querySelector("select#comuna");
-const mComuna = document.querySelector("select#comuna + span");
-sComuna.addEventListener('blur', (e) => {
-    if( sComuna.value == "" ) {
-        mComuna.textContent = "Debe seleccionar una comuna";
-        mComuna.classList.add("error");
-    }
-});
-
-const btnEnviar = document.querySelector("button[type='submit']");
-btnEnviar.addEventListener('submit', () => {
-    
-});
+        if( ! /^[0-9]+$/.test(valor) ) {
+            throw new Error("Sólo debe contener números!");
+        }
+        return true;
+    });
+}
+/* --------------------------------- */
