@@ -53,8 +53,9 @@ document.querySelector('form').addEventListener('submit', (submitEvent) => {
     validaTelefono();
     /*
     validaDireccion();
-    validaComuna();
     */
+    validaComuna();
+    
    const errores = document.querySelectorAll("span.error").length;
    if(errores > 0) {
      document.querySelector("form > p").textContent = `Hay ${errores} error(es) por resolver.`;
@@ -117,3 +118,30 @@ const validaTelefono = () => {
     });
 }
 /* --------------------------------- */
+const direccionInputElement = document.querySelector("#direccion");
+const direccionSpanElement  = document.querySelector("#direccion + span");
+direccionInputElement.addEventListener('input', (evento) => {
+    validaDireccion();
+});
+const validaDireccion = () => {    
+    valida(direccionInputElement.value, direccionInputElement, direccionSpanElement, (valor) => {
+        if(valor.length < 5) {
+            throw new Error("Dirección demasiado corta!");
+        }
+        return true;
+    });
+};
+/* --------------------------------- */
+const comunaSelectElement = document.querySelector("#comuna");
+const comunaSpanElement  = document.querySelector("#comuna + span");
+comunaSelectElement.addEventListener('input', (evento) => {
+    validaComuna();
+});
+const validaComuna = () => {    
+    valida(comunaSelectElement.value, comunaSelectElement, comunaSpanElement, (valor) => {
+        if(valor.length < 1) {
+            throw new Error("Debe seleccionar una comuna!");
+        }
+        return true;
+    });
+};
