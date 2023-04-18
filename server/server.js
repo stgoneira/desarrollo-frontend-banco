@@ -6,6 +6,7 @@ fastify.get('/', async (request, reply) => {
 });
 /* USUARIO */
 fastify.get('/usuario/:id', require('./src/usuario-id'));
+fastify.post('/usuario/login', require('./src/usuario-login'));
 fastify.route({
   method: ['GET', 'POST', 'PUT', 'DELETE'],
   url: '/usuario',
