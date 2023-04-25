@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 8080",
-    "build": "next build",
+    "build": "next build && rm -rf ../administracion && mv out ../administracion",
     "start": "next start",
     "lint": "next lint"
   },

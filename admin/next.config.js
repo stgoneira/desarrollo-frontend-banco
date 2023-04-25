@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
-  basePath: '/admin/out',
+  basePath: '/administracion',  
   trailingSlash: true,
   images: {
     unoptimized: true
