@@ -14,6 +14,12 @@ export default function Cabecera(props) {
                         <Link href="/consultas">Consultas</Link>
                     </li>
                     <li>
+                        <Link href="/categorias">Categorías</Link>
+                    </li>
+                    <li>
+                        <Link href="/productos">Productos</Link>
+                    </li>
+                    <li>
                         <Link href="/configuracion">Configuración</Link>
                     </li>
                 </ul>

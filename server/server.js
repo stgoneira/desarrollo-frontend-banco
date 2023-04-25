@@ -19,6 +19,12 @@ fastify.route({
     handler: require('./src/contacto')
 });
 fastify.get('/contacto/:id', require('./src/contacto-id'));
+/* CATEGORIA */
+fastify.route({
+  method: ['GET', 'POST', 'PUT', 'DELETE'],
+  url: '/categoria',
+  handler: require('./src/categoria')
+});
 
 // Run the server!
 const start = async () => {
