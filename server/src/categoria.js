@@ -7,12 +7,30 @@ module.exports = async (req /*: Request */, res /*:Reply */) => {
             return procesarGET(req, res);
         case 'POST':
             return procesarPOST(req, res);
+        case 'DELETE':
+            return procesarDELETE(req, res);
         default:
             res.code(500).send({error: 'metodo no permitido'});
     }    
 };
 
 const getColeccion = () => admin.firestore().collection('categorias');
+
+/**
+ * 
+ * @param {Request} req 
+ * @param {Reply} res 
+ */
+async function procesarDELETE(req, res) {        
+    try {
+        const { id } = req.query; 
+        const documento = await getColeccion().doc(id);
+        await documento.delete();
+        return {borrado: true};
+    } catch (error) {
+        res.code(500).send({error: JSON.stringify(error)});
+    }
+}
 
 /**
  * 
