@@ -32,6 +32,7 @@ section#descuentos img {
     height: auto;
 }
 /* END -- MAIN -- DESCUENTO */
+
 /* -- MAIN -- PRODUCTOS */
 h2.productos {
     text-align: center;
@@ -56,6 +57,11 @@ h2.productos span {
     min-height: 290px;
     box-shadow: 3px 7px 8px rgba(0,0,0,0.4);
     background-repeat: no-repeat;
+    transition: all 4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+#productos article:hover {
+    opacity: 0.7;
+    cursor: pointer;
 }
 #productos article h3,
 #productos article p {
