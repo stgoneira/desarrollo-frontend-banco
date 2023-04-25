@@ -1,6 +1,11 @@
 /* -- MAIN */
 main {
     padding: 3rem var(--window-padding);
+    animation: mainanimation 3s ease-out 0.5s 1 none normal;
+}
+@keyframes mainanimation {
+    from {transform: translateX(30em);}
+    to {transform: translateX(0em);}
 }
 /* -- MAIN -- DESCUENTO */
 section#descuentos {

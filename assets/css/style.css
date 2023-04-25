@@ -70,10 +70,12 @@ a {
     fill: white;
     font-weight: 300;
     text-transform: uppercase;
+    transition: all 0.8s ease-out;
 }
 #header-1 nav a:hover {
     color: rgba(255, 255, 255, 0.5);
     border-bottom: 1px solid var(--primary-color);
+    fill: #666;
 }
 /* END -- HEADER-1 */
 
@@ -90,7 +92,13 @@ a {
     background-color: var(--primary-color-opacity);
 }
 #header-2 img {
-    height: 8vh;    
+    height: 8vh;
+    /* duration | easing-function | delay | iteration-count | direction | fill-mode | play-state | name */
+    animation: 3s ease-in 0.5s 1 normal none running logoanimation;    
+}
+@keyframes logoanimation {
+    from { transform: translateX(30em); }
+    to { transform: translateX(0%); }
 }
 #header-2 nav {
     display: flex;
@@ -108,6 +116,7 @@ a {
     border-radius: 10px;
     padding: 0.4em 2em;
     fill: white;
+    transition: all 0.5s ease-out;
 }
 #header-2 nav a:hover {
     background-color: var(--secondary-color-opacity);
@@ -125,11 +134,16 @@ a {
     min-height: 70vh; 
     background-color: rgba(0, 0, 0, 0.95);
     background-blend-mode: normal, luminosity;
-
+    animation: fadeIn 2s ease-out none;
 }
 .slide img {
     max-width: 2400px;
     max-height: 70vh;
+    
+}
+@keyframes fadeIn {
+    from {opacity: 0;);}
+    to {opacity: 1;);}
 }
 /* END -- SLIDES */
 
@@ -165,6 +179,7 @@ footer.main a {
     fill: white;
     stroke: white;
     text-decoration: none;
+    transition: all 0.5s ease-out;
 }
 footer.main a:hover {
     color: var(--primary-color);
