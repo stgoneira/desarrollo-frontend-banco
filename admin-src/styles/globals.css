@@ -7,3 +7,8 @@ footer a {
     color: white;
     padding-right: 1em;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,12 +1,9 @@
-import CategoriaForm from "@/components/categoria/form"; 
-import CategoriaListado from "@/components/categoria/listado";
+import CategoriaManager from "@/components/categoria/manager";
 
 export default function PageCategoriaIndex() {
     return (
         <>
-            <CategoriaForm />
-
-            <CategoriaListado />
+            <CategoriaManager /> 
         </>
     ); 
 }

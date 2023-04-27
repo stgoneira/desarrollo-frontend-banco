@@ -1,22 +1,5 @@
-import { useEffect, useState } from "react"
 
-export default function CategoriaListado() {
-    const [categorias, setCategorias] = useState([]);
-
-    const baseUrl   = 'http://localhost:3000';
-    const url       = baseUrl + '/categoria';
-
-    const cargar = async () => {        
-        const respuesta = await fetch(url);
-        if( !respuesta.ok ) throw new Error("Problema al traer las categorías");
-        const cats      = await respuesta.json();
-        setCategorias(cats);
-    }
-
-    useEffect(() => {
-        cargar();
-    }, []);
-
+export default function CategoriaListado({categorias, setCategorias, compMessage, setCompMessage}) {
     const borrar = async (categoria) => {        
         const respuesta = await fetch(url+'?id='+categoria.id, {
             method: 'DELETE'
@@ -24,9 +7,19 @@ export default function CategoriaListado() {
         await respuesta.json();
         await cargar();
     }
+    const nuevo = () => {
+        setCompMessage({accion: 'nuevo'});
+    };
+    const editar = (categoria) => {
+        setCompMessage({
+            accion: 'editar',
+            data: categoria
+        });
+    };
 
     return (
         <>
+            <button onClick={nuevo}>Nuevo</button>
             <table border={1}>
                 <thead>
                     <tr>
@@ -43,7 +36,7 @@ export default function CategoriaListado() {
                             <td>{c.nombre}</td>
                             <td>{c.descripcion}</td>
                             <td>
-                                <button>Editar</button>
+                                <button onClick={() => editar(c)}>Editar</button>
                                 <button onClick={() => borrar(c)}>Eliminar</button>
                             </td>                            
                         </tr>    
