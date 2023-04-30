@@ -3,17 +3,41 @@
 <head>
     <meta charset="UTF-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ingreso</title>
-    <script src="./assets/js/login.js" defer></script>
+    <title>Ingreso</title>        
 </head>
 <body>
-    
-    <h1>Ingreso Usuarios</h1>
+    <!-- ################# React Versión ###################### -->
+    <div id="react-login"></div>
+    <script type="importmap">
+        {
+            "imports": {
+                "react": "https://esm.sh/react@18.2.0",
+                "react-dom": "https://esm.sh/react-dom@18.2.0",
+                "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime"
+            }
+        }
+    </script>
+    <script type="module">
+        import React from "react";
+        import ReactDOM from "react-dom";
+        import Login from './admin-src/components/login.js';
+        const elementoHTML  = document.getElementById('react-login');
+        const raizReact     = ReactDOM.createRoot( elementoHTML );
+        raizReact.render( React.createElement(Login) );
+    </script>
+    <!-- ################# END React Versión ###################### -->
 
+    <!-- ################# HTML Versión ######################
+
+    <h1>Ingreso Usuarios</h1>
     <form method="POST" action="login.html">
         <input type="email" name="email" id="email" placeholder="email" /><br />
         <input type="password" name="contrasena" id="contrasena" placeholder="contraseña" />
         <button type="submit">Ingresar</button>
     </form>
+    <script src="./assets/js/login.js"></script>
+    -->
+    <!-- ################# END HTML Versión ###################### -->
+    
 </body>
 </html>
