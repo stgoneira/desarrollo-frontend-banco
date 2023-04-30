@@ -63,7 +63,9 @@ a {
     align-items: center;
 }
 #header-1 nav:nth-child(2) {
-    min-width: 75px;
+    min-width: 98px;
+    font-size: 1.2em;
+    gap: 2em;
 }
 #header-1 nav a {
     display: flex;    

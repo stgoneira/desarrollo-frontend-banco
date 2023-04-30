@@ -11,7 +11,11 @@ main {
 form fieldset {
     padding: 1em 2em;
     margin-bottom: 2em;
-    width: 50%;
+}
+@media screen and (min-width: 768px) {        
+    form fieldset {
+        width: 50%;
+    }
 }
 form input {
     height: 1.7em;
