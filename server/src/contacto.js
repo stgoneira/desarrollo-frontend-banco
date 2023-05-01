@@ -10,8 +10,8 @@ module.exports = async (req, res) => {
             break;
         case 'POST': 
             const accionPost = async () => {
-                const {nombre, rut, telefono} = req.body;
-                const documento = {nombre, rut, telefono};
+                const {nombre, rut, telefono, email, motivo, mensaje, direccion, comuna} = req.body;
+                const documento = {nombre, rut, telefono, email, motivo, mensaje, direccion, comuna};
                 const docRef    = await coleccion.doc();
                 await docRef.set(documento);
                 documento.id = docRef.id;

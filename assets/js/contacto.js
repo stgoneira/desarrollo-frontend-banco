@@ -1,9 +1,3 @@
-var Errores = {
-    nombre: {valido: false, mensaje: ""},
-    rut: {valido: false, mensaje: ""},
-    telefono: {valido: false, mensaje: ""}
-};
-
 var Rut = {
 	// Valida el rut con su cadena completa "XXXXXXXX-X"
 	validaRut : function (rutCompleto) {
@@ -100,6 +94,20 @@ const validaTelefono = () => {
     });
 }
 /* --------------------------------- */
+const emailInputElement = document.querySelector("#email");
+const emailSpanElement  = document.querySelector("#email + span");
+emailInputElement.addEventListener('input', (evento) => {
+    validaEmail();
+});
+const validaEmail = () => {
+    valida(emailInputElement.value, emailInputElement, emailSpanElement, (valor) => {        
+        const regex     = /\S+@\S+\.[a-zA-Z]{2,}$/i;
+        const resultado = regex.test(valor);
+        if( !resultado ) throw new Error("Email inválido");
+        return true;
+    });
+}
+/* --------------------------------- */
 const direccionInputElement = document.querySelector("#direccion");
 const direccionSpanElement  = document.querySelector("#direccion + span");
 direccionInputElement.addEventListener('input', (evento) => {
@@ -128,33 +136,83 @@ const validaComuna = () => {
     });
 };
 /* --------------------------------- */
+const motivoSelectElement   = document.querySelector("#motivo");
+const motivoSpanElement     = document.querySelector("#motivo + span");
+motivoSelectElement.addEventListener('input', (evento) => {
+    validaMotivo();
+});
+const validaMotivo = () => {    
+    valida(motivoSelectElement.value, motivoSelectElement, motivoSpanElement, (valor) => {
+        if(valor.length < 1) {
+            throw new Error("Debe seleccionar un motivo!");
+        }
+        return true;
+    });
+};
+/* --------------------------------- */
+const mensajeTextareaElement    = document.querySelector("#mensaje");
+const mensajeSpanElement        = document.querySelector("#mensaje + span");
+mensajeTextareaElement.addEventListener('input', (evento) => {
+    validaMensaje();
+});
+const validaMensaje = () => {    
+    valida(mensajeTextareaElement.value, mensajeTextareaElement, mensajeSpanElement, (valor) => {
+        if(valor.length < 10) {
+            throw new Error("Mensaje demasiado corto!");
+        }
+        return true;
+    });
+};
+
+
+/* --------------------------------- */
 document.querySelector('form').addEventListener('submit', async (submitEvent) => {
     submitEvent.preventDefault();
+
+    const botonSubmit = document.querySelector('button[type="submit"');
+    botonSubmit.disabled = true;
+
+    setTimeout(() => botonSubmit.disabled = false, 15000);
+
     validaNombre();    
     validaRut();    
     validaTelefono();    
+    validaEmail();
     validaDireccion();    
     validaComuna();
+    validaMotivo();
+    validaMensaje();
     
    const errores = document.querySelectorAll("span.error").length;
+   const elementosMuestraMensaje = document.querySelectorAll("form p.mensaje-form");
    if(errores > 0) {
-     document.querySelector("form > p").textContent = `Hay ${errores} error(es) por resolver.`;
+        elementosMuestraMensaje.forEach(e => e.textContent = `Hay ${errores} error(es) por resolver.`);
    } else {
-     document.querySelector("form > p").textContent = "Procesando...";
+        elementosMuestraMensaje.forEach(e => e.textContent = "Enviando...");
    }
 
    const nombre     = nombreInputElement.value;
    const rut        = rutInputElement.value;
    const telefono   = telefonoInputElement.value;
+   const email      = emailInputElement.value;
+   const direccion  = direccionInputElement.value;
+   const comuna     = comunaSelectElement.value;
+   const motivo     = motivoSelectElement.value;
+   const mensaje    = mensajeTextareaElement.value;
 
    const contacto = {
     nombre,
     rut,
-    telefono
+    telefono,
+    email,
+    direccion,
+    comuna,
+    motivo,
+    mensaje
    };
    console.dir(contacto);
 
-   const baseUrl    = 'http://localhost:3000';
+   const baseUrl    = getBaseUrl();
    const url        = baseUrl + '/contacto';
    
    try {
@@ -165,6 +223,7 @@ document.querySelector('form').addEventListener('submit', async (submitEvent) =>
     }); 
     const datos = await respuesta.json();
     console.log("Contacto guardado, actualizar mensaje form ....");
+    elementosMuestraMensaje.forEach(e => e.textContent = "Pronto nos comunicaremos contigo, gracias por confiar en Data Bank.");
    } catch (error) {
     console.error(error.message);
    }

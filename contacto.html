@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/contacto.css" />
     <title>Data Bank | Contacta con nosotros</title>
+    <script src="assets/js/config.js" defer></script>
     <script src="assets/js/contacto.js" defer></script>
 </head>
 <body>    
@@ -56,7 +57,8 @@
         <h1>Contacta a un Ejecutivo de Data Bank</h1>
 
         <form action="contacto.html" method="POST">
-            <p class="error"></p>
+            <p class="mensaje-form"></p>
+
             <fieldset>
                 <legend>Datos Personales</legend>
                 <div>
@@ -72,6 +74,11 @@
                 <div>
                     <label for="rut">Teléfono</label>
                     <input type="text" id="telefono" name="telefono" />
+                    <span></span>
+                </div>
+                <div>
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" />
                     <span></span>
                 </div>
             </fieldset>
@@ -95,10 +102,34 @@
                     <span></span>
                 </div>
             </fieldset>
+            <fieldset>
+                <legend>Mensaje</legend>
+                <div>
+                    <label for="motivo">Motivo</label>                    
+                    <select name="motivo" id="motivo">
+                        <option value="">-- Por favor escoja un motivo--</option>
+                        <option value="cuenta-corriente">Cuenta Corriente</option>
+                        <option value="credito-hipotecario">Crédito Hipotecario</option>
+                        <option value="credito-consumo">Crédito de Consumo</option>
+                        <option value="seguros">Seguros</option>
+                        <option value="inversiones">Inversiones</option>
+                    </select>
+                    <span></span>
+                </div>
+
+                <div>
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="10"></textarea>
+                    <span></span>
+                </div>
+            </fieldset>
+
             <div class="botones">
                 <button type="submit">Enviar</button>
                 <button type="reset">Limpiar</button>
             </div>
+
+            <p class="mensaje-form"></p>
         </form>
     </main>
 
