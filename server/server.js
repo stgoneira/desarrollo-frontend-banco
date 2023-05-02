@@ -4,6 +4,8 @@ fastify.register(require('@fastify/cors'), {});
 fastify.get('/', async (request, reply) => {
   return { api: 'Proyecto Frontend Banco 2023' };
 });
+/* SETUP */
+fastify.get('/setup', require('./src/setup'));
 /* USUARIO */
 fastify.get('/usuario/:id', require('./src/usuario-id'));
 fastify.post('/usuario/login', require('./src/usuario-login'));
