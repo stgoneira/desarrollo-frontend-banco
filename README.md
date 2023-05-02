@@ -21,7 +21,7 @@ https://alister-bank.cmsmasters.net/
 #### Setup
 
 ```http
-  GET /setup
+GET /setup
 ```
 
 | Parameter | Type     | Description                |
@@ -31,7 +31,7 @@ https://alister-bank.cmsmasters.net/
 #### Login
 
 ```http
-  POST /usuario/login
+POST /usuario/login
 ```
 
 | Parameter | Type     | Description                       |
