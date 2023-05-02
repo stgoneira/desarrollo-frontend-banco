@@ -28,7 +28,7 @@ https://alister-bank.cmsmasters.net/
 ### Zona Pública
 https://stgoneira.github.io/desarrollo-frontend-banco/  
 
-**usuario:** admin@example.com
+**usuario:** admin@example.com  
 **contraseña:** 123456 
 
 ### Zona Privada
