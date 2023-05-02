@@ -78,3 +78,15 @@ POST /categoria
 | :-------- | :------- | :-------------------------------- |
 | `nombre`      | `string` | **Required**. Nombre de la categoría |
 | `descripcion` | `string` | **Required**. Descripción de la categoría |
+
+
+#### Borrar una categoría de productos
+
+```http
+DELETE /categoria?id=${id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. ID de la categoría |
+
