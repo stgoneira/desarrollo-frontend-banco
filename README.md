@@ -11,6 +11,13 @@ Además, se trabajará en la creación de dos simuladores: el primero, un simula
 - Títulos (Roboto 300)
 - Párrafos (Roboto normal)
 
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Naranjo | ![#fbb03b](https://via.placeholder.com/10/fbb03b?text=+) #fbb03b |
+| Violeta | ![#8c52ff](https://via.placeholder.com/10/8c52ff?text=+) #8c52ff |
+
+
+
 ## Inspiración 
 
 https://alister-bank.cmsmasters.net/ 
