@@ -2,28 +2,14 @@ import Link from "next/link";
 
 export default function Cabecera(props) {
     return (
-        <header>
-            Logo
+        <header style={{display: 'flex', justifyContent: 'space-between'}}>
+            <img id="logo" src="/img/isotipo.svg" alt="logo" />
 
-            <nav>
-                <ul>
-                    <li>
-                        <Link href="/">Inicio</Link>
-                    </li>
-                    <li>
-                        <Link href="/consultas">Consultas</Link>
-                    </li>
-                    <li>
-                        <Link href="/categoria">Categorías</Link>
-                    </li>
-                    <li>
-                        <Link href="/productos">Productos</Link>
-                    </li>
-                    <li>
-                        <Link href="/configuracion">Configuración</Link>
-                    </li>
-                </ul>
-            </nav>
+            <section style={{display: 'flex', alignItems: 'center', gap: '1em', width: '6em'}}>
+                <img className="user-profile" src="/img/user-profile.svg" alt="usuario" />
+                <Link href="/">Salir</Link>
+            </section>
+            
         </header>
     );
 }

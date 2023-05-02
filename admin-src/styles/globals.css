@@ -1,14 +1,23 @@
-footer {
-    background: black;    
-    color: #CCC;
+:root {    
+    --primary-color: #dd852f;
+    --primary-color-opacity: rgba(221, 133, 47, 0.8);
+    --secondary-color: #3c00b3;
+    --secondary-color-opacity: rgba(60, 0, 179, 0.8);
+    --window-padding: 1rem;
 }
-
-footer a {
-    color: white;
-    padding-right: 1em;
+body {
+    margin: 0;
+    padding: 0;
 }
-
-form {
-    display: flex;
-    flex-direction: column;
+header, aside {
+    background: var(--primary-color);
+}
+header {
+    padding: 0.2em var(--window-padding);
+}
+header img#logo {
+    max-height: 4em;
+}
+header img.user-profile {
+    max-height: 3em;
 }

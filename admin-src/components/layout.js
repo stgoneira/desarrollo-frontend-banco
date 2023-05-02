@@ -1,12 +1,12 @@
 import Cabecera from "./cabecera";
-import PiePagina from "./pie-pagina";
+import Sidebar from "./sidebar";
 
 export default function Layout({children}) {
     return (
         <>
             <Cabecera />
+            <Sidebar />
             {children}
-            <PiePagina />
         </>
     );
 }
