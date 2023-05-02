@@ -14,3 +14,30 @@ Además, se trabajará en la creación de dos simuladores: el primero, un simula
 ## Inspiración 
 
 https://alister-bank.cmsmasters.net/ 
+
+
+## API Reference
+
+#### Setup
+
+```http
+  GET /setup
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+|  |  |  |
+
+#### Login
+
+```http
+  POST /usuario/login
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `email`      | `string` | **Required**. Correo electrónico |
+| `contrasena` | `string` | **Required**. Contraseña |
+
+
+
