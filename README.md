@@ -16,7 +16,7 @@ Además, se trabajará en la creación de dos simuladores: el primero, un simula
 https://alister-bank.cmsmasters.net/ 
 
 
-## API Reference
+## Fastify Server - API Reference
 
 #### Setup
 
@@ -57,3 +57,24 @@ POST /contacto
 | `mensaje`   | `string` | **Required**. Mensaje o consulta |
 | `direccion` | `string` | **Required**. Dirección de quien contacta |
 | `comuna`    | `string` | **Required**. Comuna donde reside quien contacta |
+
+#### Listar categorías de productos
+
+```http
+GET /categoria
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+|       |  |  |
+
+#### Crear categoría de productos
+
+```http
+POST /categoria
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `nombre`      | `string` | **Required**. Nombre de la categoría |
+| `descripcion` | `string` | **Required**. Descripción de la categoría |
