@@ -1,9 +1,10 @@
 const fastify = require('fastify')({ logger: true });
+const Config = require('./src/lib/config');
 fastify.register(require('@fastify/cors'), {});
 
 fastify.get('/', async (request, reply) => {
   let mensaje = 'Proyecto Frontend Banco 2023';  
-  if (process.env.NODE_ENV === 'production') {
+  if ( Config.isProduction() ) {
     mensaje += ' | PROD'
   } else {
     mensaje += ' | DEV'

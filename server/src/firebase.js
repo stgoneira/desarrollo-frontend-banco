@@ -23,7 +23,8 @@ var admin = require("firebase-admin");
 
 var serviceAccount = '';
 if( Config.isProduction() ) {
-  serviceAccount = require("/etc/secrets/serviceAccountKey.json");
+  // serviceAccount = require("/etc/secrets/serviceAccountKey.json"); // for render.com
+  serviceAccount = require("./serviceAccountKey.json");
 } else {
   serviceAccount = require("./serviceAccountKey.json");
 }

@@ -19,5 +19,8 @@
     "fastify": "^4.15.0",
     "firebase": "^9.20.0",
     "firebase-admin": "^11.7.0"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
