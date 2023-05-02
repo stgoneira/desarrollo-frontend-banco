@@ -23,7 +23,24 @@ Además, se trabajará en la creación de dos simuladores: el primero, un simula
 https://alister-bank.cmsmasters.net/ 
 
 
+## Demo
+
+### Zona Pública
+https://stgoneira.github.io/desarrollo-frontend-banco/  
+
+**usuario:** admin@example.com
+**contraseña:** 123456 
+
+### Zona Privada
+https://stgoneira.github.io/desarrollo-frontend-banco/admin  
+
+**usuario:** cliente@123.cl  
+**contraseña:** 654321 
+
+
 ## Fastify Server - API Reference
+
+Desplegado en Glitch: https://dapper-shorthaired-doom.glitch.me 
 
 #### Setup
 
