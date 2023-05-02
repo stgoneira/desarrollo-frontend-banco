@@ -2,7 +2,13 @@ const fastify = require('fastify')({ logger: true });
 fastify.register(require('@fastify/cors'), {});
 
 fastify.get('/', async (request, reply) => {
-  return { api: 'Proyecto Frontend Banco 2023' };
+  let mensaje = 'Proyecto Frontend Banco 2023';  
+  if (process.env.NODE_ENV === 'production') {
+    mensaje += ' | PROD'
+  } else {
+    mensaje += ' | DEV'
+  } 
+  return { api: mensaje };
 });
 /* SETUP */
 fastify.get('/setup', require('./src/setup'));

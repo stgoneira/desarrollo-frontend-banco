@@ -2,6 +2,7 @@
 // FIREBASE
 // ############################################################
 const { initializeApp } = require("firebase/app");
+const Config = require('./lib/config');
 // config 
 const firebaseConfig = {
   apiKey: "AIzaSyAwQ1z-0soRoHmxw-JlDC-3eYEhdP-Luc8",
@@ -19,7 +20,14 @@ const app = initializeApp(firebaseConfig);
 // FIREBASE-ADMIN
 // ############################################################
 var admin = require("firebase-admin");
-var serviceAccount = require("./serviceAccountKey.json");
+
+var serviceAccount = '';
+if( Config.isProduction() ) {
+  serviceAccount = require("/etc/secrets/serviceAccountKey.json");
+} else {
+  serviceAccount = require("./serviceAccountKey.json");
+}
+
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   storageBucket: "frontend-banco-2023.appspot.com"
