@@ -20,6 +20,7 @@ https://alister-bank.cmsmasters.net/
 
 #### Setup
 
+Se ejecuta sólo si no hay ningún usuario en la BD.
 ```http
 GET /setup
 ```
@@ -40,4 +41,19 @@ POST /usuario/login
 | `contrasena` | `string` | **Required**. Contraseña |
 
 
+#### Guardar el contacto o consulta
 
+```http
+POST /contacto
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `nombre`    | `string` | **Required**. Nombre de quien contacta |
+| `rut`       | `string` | **Required**. RUT de quien contacta |
+| `telefono`  | `string` | **Required**. Teléfono de quien contacta |
+| `email`     | `string` | **Required**. Correo electrónico de quien contacta |
+| `motivo`    | `string` | **Required**. Motivo del contacto |
+| `mensaje`   | `string` | **Required**. Mensaje o consulta |
+| `direccion` | `string` | **Required**. Dirección de quien contacta |
+| `comuna`    | `string` | **Required**. Comuna donde reside quien contacta |
