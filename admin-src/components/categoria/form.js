@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import Configuracion from "../libreria/config";
 
-export default function CategoriaForm({compMessage, setCompMessage}) {
+export default function CategoriaForm({compMessage, setCompMessage, url, categorias, setCategorias}) {
     const [id, setId]                   = useState('');
     const [nombre, setNombre]           = useState('');
     const [descripcion, setDescripcion] = useState('');
+
+    const [mensaje, setMensaje]             = useState('');
+    const [mensajeClass, setMensajeClass]   = useState('');
 
     /**
      * @param {SubmitEvent} eventoSubmit 
@@ -17,20 +20,41 @@ export default function CategoriaForm({compMessage, setCompMessage}) {
                 nombre,
                 descripcion
             }
-            const baseUrl   = Configuracion.getBaseUrl();
-            const url       = baseUrl + '/categoria';
 
+            let metodo = 'POST';
+            if( compMessage.accion == 'editar') {
+                metodo = 'PUT';
+                categoriaData.id = compMessage.data.id;
+            }
             const respuesta = await fetch(url, {
-                method: 'POST',
+                method: metodo,
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(categoriaData)
             });
+            
+            if( !respuesta.ok ) throw new Error("No se pudo guardar la categoría");
+
             const categoriaGuardada = await respuesta.json();
             console.dir( categoriaGuardada );
+            setMensaje("Categoría guardada con ID "+categoriaGuardada.id);
+            setMensajeClass('success');
+
+            if( compMessage.accion == 'editar') {
+                const categoriasFiltradas = categorias.filter(c => c.id != compMessage.data.id );
+                setCategorias([...categoriasFiltradas, categoriaGuardada]);
+            } else {
+                setCategorias([...categorias, categoriaGuardada]);
+                setCompMessage({
+                    accion: 'editar',
+                    data: categoriaGuardada
+                });
+            }
         } catch (error) {
             console.error( error );
+            setMensaje(error.message);
+            setMensajeClass('error');
         }
     };
 
@@ -45,6 +69,8 @@ export default function CategoriaForm({compMessage, setCompMessage}) {
     }, [compMessage]);
 
     return (
+        <>
+        <p className={mensajeClass}>{mensaje}</p>
         <form action="index.html" method="post" onSubmit={procesarFormulario}>
             <label htmlFor="nombre">Nombre</label>
             <input type="text" id="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />
@@ -58,6 +84,6 @@ export default function CategoriaForm({compMessage, setCompMessage}) {
                 <button type="submit">Crear</button>
             )}
         </form>
-        
+        </>
     )
 }

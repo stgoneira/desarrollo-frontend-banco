@@ -1,11 +1,29 @@
+import { useState } from "react";
 
-export default function CategoriaListado({categorias, setCategorias, compMessage, setCompMessage}) {
-    const borrar = async (categoria) => {        
-        const respuesta = await fetch(url+'?id='+categoria.id, {
-            method: 'DELETE'
-        });
-        await respuesta.json();
-        await cargar();
+export default function CategoriaListado({categorias, setCategorias, compMessage, setCompMessage, url}) {
+    const [mensaje, setMensaje]             = useState('');
+    const [mensajeClase, setMensajeClase]   = useState('');
+
+    const borrar = async (categoria) => {    
+        try {
+            const respuesta = await fetch(url+'?id='+categoria.id, {
+                method: 'DELETE'
+            });
+            await respuesta.json();
+            setMensaje("Se borró la categoría: "+categoria.nombre);
+            setMensajeClase("exito");
+            
+            setCategorias( categorias.filter(c => c.id != categoria.id) );
+
+            setTimeout(() => {
+                setMensaje("");
+                setMensajeClase("");
+            }, 5000);    
+        } catch (error) {
+            setMensaje("Hubo un error al borrar la categoría: "+error.message);
+            setMensajeClase("error");
+        }    
+        
     }
     const nuevo = () => {
         setCompMessage({accion: 'nuevo'});
@@ -20,6 +38,7 @@ export default function CategoriaListado({categorias, setCategorias, compMessage
     return (
         <>
             <button onClick={nuevo}>Nuevo</button>
+            <p className={mensajeClase}>{mensaje}</p>
             <table border={1}>
                 <thead>
                     <tr>
@@ -30,6 +49,11 @@ export default function CategoriaListado({categorias, setCategorias, compMessage
                     </tr>
                 </thead>
                 <tbody>
+                    {categorias.length == 0 &&
+                    <tr>
+                        <td colSpan={4}>No hay categorías que mostrar.</td>
+                    </tr>
+                    }
                     {categorias.map(c => (
                         <tr key={c.id}>
                             <td>{c.id}</td>

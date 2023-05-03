@@ -24,13 +24,17 @@ export default function CategoriaManager() {
     return (
         <>
             <CategoriaForm 
+                url={url}
                 compMessage={compMessage}
                 setCompMessage={setCompMessage}
+                categorias={categorias} 
+                setCategorias={setCategorias}
             />
 
             <hr />
 
             <CategoriaListado 
+                url={url}
                 categorias={categorias} 
                 setCategorias={setCategorias}
                 compMessage={compMessage}

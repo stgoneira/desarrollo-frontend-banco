@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function LoginPage() {
+export default function PageLogin() {
     const [email, setEmail]             = useState('');
     const [contrasena, setContrasena]   = useState('');
     const [mensajes, setMensajes]       = useState('');

@@ -7,6 +7,8 @@ module.exports = async (req /*: Request */, res /*:Reply */) => {
             return procesarGET(req, res);
         case 'POST':
             return procesarPOST(req, res);
+        case 'PUT':
+            return procesarPUT(req, res);
         case 'DELETE':
             return procesarDELETE(req, res);
         default:
@@ -61,6 +63,22 @@ async function procesarPOST(req, res) {
         };
         const documento = await getColeccion().doc();
         await documento.set(categoria);
+        categoria.id = documento.id;
+        return categoria;
+    } catch (error) {
+        res.code(500).send({error: JSON.stringify(error)});
+    }
+}
+
+async function procesarPUT(req, res) {
+    try {
+        const {nombre, descripcion, id} = req.body;
+        const categoria = {
+            nombre, 
+            descripcion
+        };
+        const documento = await getColeccion().doc(id);
+        await documento.update(categoria);
         categoria.id = documento.id;
         return categoria;
     } catch (error) {
