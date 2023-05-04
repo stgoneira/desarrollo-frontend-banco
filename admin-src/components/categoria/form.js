@@ -38,7 +38,7 @@ export default function CategoriaForm({compMessage, setCompMessage, url, categor
 
             const categoriaGuardada = await respuesta.json();
             console.dir( categoriaGuardada );
-            setMensaje("Categoría guardada con ID "+categoriaGuardada.id);
+            setMensaje("Categoría '"+categoriaGuardada.nombre+"' guardada con ID "+categoriaGuardada.id);
             setMensajeClass('success');
 
             if( compMessage.accion == 'editar') {

@@ -5,7 +5,8 @@ import Configuracion from "../libreria/config";
 
 export default function CategoriaManager() {
     const [categorias, setCategorias]   = useState([]);
-    const [compMessage, setCompMessage] = useState(null); 
+    const defaultCompMessage = {accion: 'crear', data: {}};
+    const [compMessage, setCompMessage] = useState(defaultCompMessage); 
 
     const baseUrl   = Configuracion.getBaseUrl();
     const url       = baseUrl + '/categoria';

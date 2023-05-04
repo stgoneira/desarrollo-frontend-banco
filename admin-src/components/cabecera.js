@@ -31,7 +31,7 @@ export default function Cabecera(props) {
             <section style={{display: 'flex', alignItems: 'center', gap: '1em', width: '16em'}}>
                 <span>Bienvenido {usuario.user.email}</span>
                 <img className="user-profile" src="/img/user-profile.svg" alt="usuario" />
-                <Link href="/" onClick={salir}>Salir</Link>
+                <Link href="/admin" onClick={salir}>Salir</Link>
             </section>
         </header>
     );
