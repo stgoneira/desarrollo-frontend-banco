@@ -1,0 +1,14 @@
+{
+  "name": "desarrollo-frontend-banco",
+  "version": "1.0.0",
+  "description": "Proyecto de un sitio web para un banco como ejemplo para el Curso de Frontend",
+  "scripts": {
+    "dev": "http-server -p 8090"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
