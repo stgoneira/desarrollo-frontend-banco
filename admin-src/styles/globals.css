@@ -8,16 +8,77 @@
 body {
     margin: 0;
     padding: 0;
+    font-size: 16px;
+}
+div#contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 5fr;
 }
 header, aside {
     background: var(--primary-color);
 }
 header {
     padding: 0.2em var(--window-padding);
+    grid-column: 1 / 5;
 }
 header img#logo {
     max-height: 4em;
 }
 header img.user-profile {
     max-height: 3em;
+}
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 300;
+}
+a:hover {
+    text-decoration: underline;
+}
+aside {
+    padding: 2em 1em;
+    grid-column: 1 / 2;
+}
+main {
+    grid-column: 2 / 5;
+}
+table {
+    border-collapse: collapse;
+}
+td,th {
+    border: 1px solid #333;
+    padding: 0.2em 0.5em;
+}
+th {
+    background-color: var(--secondary-color);
+    color: white;
+}
+td.botones {
+    display: flex;
+    gap: 1em;
+}
+button {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    padding: .3em .8em;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+button:hover {
+    cursor: pointer;
+}
+label {
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+input, textarea {
+    padding: .2rem .5rem;
+    font-size: 1rem;
+}
+p.success {
+    background-color: greenyellow;
+    padding: 1em 2em;
+    border-radius: 10px;
 }

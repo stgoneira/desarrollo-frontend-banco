@@ -6,7 +6,11 @@ const coleccion = db.collection('contacto');
 module.exports = async (req, res) => {
     switch( req.method ) {
         case 'GET': 
-            res.code(501).send({error: 'No implementado!'});
+            const contactos = await coleccion.get();
+            return contactos.docs.map(d => {
+                const data = d.data();
+                return {id: d.id, ...data};
+            });
             break;
         case 'POST': 
             const accionPost = async () => {

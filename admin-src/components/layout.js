@@ -6,10 +6,12 @@ export default function Layout({children}) {
     checkAuthentication();
 
     return (
-        <>
+        <div id="contenedor">
             <Cabecera />
             <Sidebar />
-            {children}
-        </>
+            <main style={{padding: '1em 2em'}}>
+                {children}
+            </main>
+        </div>
     );
 }

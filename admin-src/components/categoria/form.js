@@ -71,18 +71,20 @@ export default function CategoriaForm({compMessage, setCompMessage, url, categor
     return (
         <>
         <p className={mensajeClass}>{mensaje}</p>
-        <form action="index.html" method="post" onSubmit={procesarFormulario}>
+        <form action="index.html" method="post" onSubmit={procesarFormulario} style={{gap: '1em', display: 'grid', gridTemplateColumns: '1fr 3fr'}}>
             <label htmlFor="nombre">Nombre</label>
             <input type="text" id="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />
 
             <label htmlFor="descripcion">Descripción</label>
             <textarea id="descripcion" value={descripcion} onChange={(e) => setDescripcion(e.target.value)}></textarea>
 
+            <div>
             {id.length > 3 ? (
                 <button type="submit">Editar</button>
             ):(
                 <button type="submit">Crear</button>
             )}
+            </div>
         </form>
         </>
     )

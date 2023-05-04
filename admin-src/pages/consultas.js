@@ -1,6 +1,7 @@
 import Layout from "@/components/layout";
 import Head from "next/head";
 import styles from '@/styles/Consultas.module.css';
+import ContactoListado from "@/components/contacto/listado";
 
 export default function Consultas() {
   return (
@@ -10,8 +11,9 @@ export default function Consultas() {
           <title>Consultas | Data Bank Systems</title>
         </Head>  
         <main>
-          <h1>Lorem ipsum</h1>
-          <p className={styles.parrafo}>Lorem ipsum dolor</p>
+          <h1>Consultas</h1>
+          
+          <ContactoListado />
         </main>
       </Layout>      
     </>

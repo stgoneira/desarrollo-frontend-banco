@@ -10,7 +10,7 @@ export default function Configuracion() {
         </Head>  
         <main>
           <h1>Configuraciones</h1>
-          <p>Configuración del Sistema</p>          
+          <p>TODO</p>          
         </main>
       </Layout>      
     </>

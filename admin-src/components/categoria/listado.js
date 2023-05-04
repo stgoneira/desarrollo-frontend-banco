@@ -39,7 +39,7 @@ export default function CategoriaListado({categorias, setCategorias, compMessage
         <>
             <button onClick={nuevo}>Nuevo</button>
             <p className={mensajeClase}>{mensaje}</p>
-            <table border={1}>
+            <table>
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -59,7 +59,7 @@ export default function CategoriaListado({categorias, setCategorias, compMessage
                             <td>{c.id}</td>
                             <td>{c.nombre}</td>
                             <td>{c.descripcion}</td>
-                            <td>
+                            <td className="botones">
                                 <button onClick={() => editar(c)}>Editar</button>
                                 <button onClick={() => borrar(c)}>Eliminar</button>
                             </td>                            
