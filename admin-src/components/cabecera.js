@@ -13,7 +13,6 @@ export default function Cabecera(props) {
     const salir = () => {
         localStorage.removeItem('usuario');
         setUsuario(blankUser);
-        checkAuthentication();
     }
 
     useEffect(() => {
@@ -31,7 +30,7 @@ export default function Cabecera(props) {
             <section style={{display: 'flex', alignItems: 'center', gap: '1em', width: '16em'}}>
                 <span>Bienvenido {usuario.user.email}</span>
                 <img className="user-profile" src="/desarrollo-frontend-banco/img/user-profile.svg" alt="usuario" />
-                <Link href="/admin" onClick={salir}>Salir</Link>
+                <Link href="/admin/login" onClick={salir}>Salir</Link>
             </section>
         </header>
     );

@@ -11,7 +11,7 @@ export default function Login({urlSuccess}) {
 
     const submitHandler = async (submitEvent) => {
         submitEvent.preventDefault();
-        const baseUrl       = Configuracion.getBaseUrl();
+        const baseUrl       = Configuracion.getWSBaseUrl()
         const url           = baseUrl + "/usuario/login";
         const datosLogin    = {email, contrasena};
         try {

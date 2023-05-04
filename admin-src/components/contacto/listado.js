@@ -6,7 +6,7 @@ export default function ContactoListado({}) {
 
     const cargar = async () => {
         try {
-            const url = Configuracion.getBaseUrl() + '/contacto';
+            const url = Configuracion.getWSBaseUrl() + '/contacto';
             const respuesta = await fetch(url);
             if( !respuesta.ok ) throw new Error("Hubo problemas al traer las consultas");
             const consultas = await respuesta.json();

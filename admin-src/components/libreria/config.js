@@ -1,5 +1,6 @@
 const Configuracion = {
-    getBaseUrl: () => {
+    getBaseUrl:() => '/desarrollo-frontend-banco',
+    getWSBaseUrl: () => {
         if( typeof window === 'undefined') return; // está ejecutando en NodeJS 
 
         if( ['127.0.0.1', 'localhost'].includes(window.location.hostname) ) {

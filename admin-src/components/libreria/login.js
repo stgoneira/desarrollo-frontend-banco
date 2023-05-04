@@ -1,5 +1,6 @@
 const redirigirLogin = (router) => {
     //debugger;
+    
     if( !router ) {
         window.location = '/admin/login';
     } else {

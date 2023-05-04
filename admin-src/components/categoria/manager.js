@@ -8,7 +8,7 @@ export default function CategoriaManager() {
     const defaultCompMessage = {accion: 'crear', data: {}};
     const [compMessage, setCompMessage] = useState(defaultCompMessage); 
 
-    const baseUrl   = Configuracion.getBaseUrl();
+    const baseUrl   = Configuracion.getWSBaseUrl();
     const url       = baseUrl + '/categoria';
 
     const cargar = async () => {        
