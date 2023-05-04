@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="359.12" height="117.05" version="1.1" viewBox="0 0 359.12 117.05" xmlns="http://www.w3.org/2000/svg">
+ <g fill="#fff">
+  <path d="m115.47 40.833q0.39 0.28-0.09 0.28h-95.98q-0.5 0-0.09-0.29l47.17-33.64a1.14 1.14 0 0 1 1.32 0z"/>
+  <rect transform="rotate(.1)" x="17.674" y="50.612" width="12.02" height="32.76" rx=".26"/>
+  <rect x="104.03" y="50.663" width="12.06" height="32.76" rx=".42"/>
+  <rect x="39.087" y="50.683" width="12" height="32.74" rx=".31"/>
+  <rect transform="rotate(.1)" x="60.704" y="50.557" width="12.02" height="32.74" rx=".41"/>
+  <rect x="82.337" y="50.673" width="12" height="32.78" rx=".5"/>
+  <rect x="17.547" y="92.883" width="99.28" height="10.54" rx=".4"/>
+ </g>
+ <text x="146.13928" y="80.003304" fill="#ffffff" font-family="'Abyssinica SIL'" font-size="40px" style="line-height:1.25" xml:space="preserve"><tspan x="146.13928" y="80.003304">Data Bank</tspan></text>
+</svg>
