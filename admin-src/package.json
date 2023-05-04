@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 8080",
-    "build": "next build && node post-build.js",
+    "build": "next build && node post-build.js && touch ../docs/.nojekyll",
     "start": "next start",
     "lint": "next lint"
   },
