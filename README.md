@@ -1,12 +1,14 @@
 # Proyecto Banco
 
-Proyecto de un sitio web para un banco que incluirá una variedad de funcionalidades. Para comenzar, se desarrollará la página de inicio de sesión, la cual permitirá a los usuarios ingresar a su cuenta y acceder a la información relacionada con sus cuentas, así como también hacer transferencias y ver su historial de transacciones.
+Proyecto de un sitio web para un banco que incluirá una variedad de funcionalidades. 
 
-Además, se trabajará en la creación de dos simuladores: el primero, un simulador de inversiones de depósitos a plazo, el cual permitirá a los usuarios calcular los intereses y el rendimiento de sus inversiones, y el segundo, un simulador de crédito de consumo, el cual les permitirá a los usuarios calcular la tasa de interés y el plazo de su crédito. Asimismo, se desarrollarán las páginas públicas, tales como la página de inicio, la página de descripción de productos y servicios, así como también un formulario de contacto para que los usuarios puedan comunicarse con el banco en caso de necesitar asistencia.
+En la parte pública aparecerán un detalle de los productos del banco. Habrá un formulario para contactarse con ejecutivos del banco sobre los distintos productos que este ofrece.  
+
+En la parte privada podrá revisar las consultas hechas por los clientes y administrar las categorías del catálogo de productos para canjear premios por Pesos Data Bank.
 
 ## Guía Estilo
 
-![Guía de Estilo](./assets/diseno-banco.png)
+![Guía de Estilo](./admin-src/public/assets/diseno-banco.png)
 
 - Títulos (Roboto 300)
 - Párrafos (Roboto normal)
