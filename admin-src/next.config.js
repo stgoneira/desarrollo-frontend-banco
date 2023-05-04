@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
-  //basePath: '/admin',
+  basePath: '/desarrollo-frontend-banco',
   trailingSlash: true,
   images: {
     unoptimized: true

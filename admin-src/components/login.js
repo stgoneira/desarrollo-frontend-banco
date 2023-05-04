@@ -1,10 +1,13 @@
 import React from 'react'
 import Configuracion from './libreria/config';
+import { useRouter } from 'next/router';
 
 export default function Login({urlSuccess}) {
     const [email, setEmail]             = React.useState('');
     const [contrasena, setContrasena]   = React.useState('');
     const [mensaje, setMensaje]         = React.useState('');
+
+    const router = useRouter();
 
     const submitHandler = async (submitEvent) => {
         submitEvent.preventDefault();
@@ -20,7 +23,8 @@ export default function Login({urlSuccess}) {
             if( !respuesta.ok ) throw new Error("Error al autenticar");
             const usuario       = await respuesta.json();
             localStorage.setItem('usuario', JSON.stringify(usuario));
-            window.location = urlSuccess;
+            //window.location = urlSuccess;
+            router.push(urlSuccess);
         } catch (error) {
             console.dir(error);
             setMensaje(error.message);

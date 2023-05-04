@@ -26,11 +26,11 @@ export default function Cabecera(props) {
     
     return (
         <header style={{display: 'flex', justifyContent: 'space-between'}}>
-            <img id="logo" src="/img/isotipo2.svg" alt="logo" />
+            <img id="logo" src="/desarrollo-frontend-banco/img/isotipo2.svg" alt="logo" />
 
             <section style={{display: 'flex', alignItems: 'center', gap: '1em', width: '16em'}}>
                 <span>Bienvenido {usuario.user.email}</span>
-                <img className="user-profile" src="/img/user-profile.svg" alt="usuario" />
+                <img className="user-profile" src="/desarrollo-frontend-banco/img/user-profile.svg" alt="usuario" />
                 <Link href="/admin" onClick={salir}>Salir</Link>
             </section>
         </header>

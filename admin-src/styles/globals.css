@@ -27,7 +27,7 @@ header {
     padding: 0.2em var(--window-padding);
     grid-column: 1 / 5;
 }
-header img#logo {
+header #logo {
     max-height: 4em;
 }
 header img.user-profile {
