@@ -1,12 +1,17 @@
-const redirigirLogin = () => {
-    window.location = '/login2';
+const redirigirLogin = (router) => {
+    //debugger;
+    if( !router ) {
+        window.location = '/login';
+    } else {
+        router.push('/login');
+    }
 }
 
-const checkAuthentication = () => {
+const checkAuthentication = (router) => {
     if( typeof window === 'undefined') {return}
     const strUser = localStorage.getItem('usuario');
     if(strUser == null) {
-        redirigirLogin();
+        redirigirLogin(router);
     }
     const usuario = JSON.parse(strUser);
 }

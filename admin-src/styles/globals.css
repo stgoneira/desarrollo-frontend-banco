@@ -14,6 +14,11 @@ div#contenedor {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 5fr;
+    opacity: 0;
+    transition: opacity 5s;
+}
+div#contenedor.cargado {
+    opacity: 1;
 }
 header, aside {
     background: var(--primary-color);

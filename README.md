@@ -28,14 +28,11 @@ https://alister-bank.cmsmasters.net/
 ### Zona Pública
 https://stgoneira.github.io/desarrollo-frontend-banco/  
 
-**usuario:** admin@example.com  
-**contraseña:** 123456 
-
 ### Zona Privada
 https://stgoneira.github.io/desarrollo-frontend-banco/admin  
 
-**usuario:** cliente@123.cl  
-**contraseña:** 654321 
+**usuario:** admin@example.com  
+**contraseña:** 123456 
 
 
 ## Fastify Server - API Reference

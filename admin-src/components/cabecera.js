@@ -1,19 +1,25 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { checkAuthentication } from "./libreria/login";
 
 export default function Cabecera(props) {
-    const [usuario, setUsuario] = useState({
+    const blankUser = {
         user: {
             email: ''
         }
-    });
+    };
+    const [usuario, setUsuario] = useState(blankUser);
 
     const salir = () => {
         localStorage.removeItem('usuario');
+        setUsuario(blankUser);
+        checkAuthentication();
     }
 
     useEffect(() => {
+        console.log("recuperando usuario localStorage");
         const usuarioRaw    = localStorage.getItem('usuario');
+        if( !usuarioRaw ) return;
         setUsuario( JSON.parse(usuarioRaw) );
     }, []);
 
